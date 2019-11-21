@@ -1,0 +1,33 @@
+d_preise = {
+  "Brokkoli": 1.29,
+  "Eisbergsalat": 0.99,
+  "CO2-Zylinder": 8.99,
+  "Nudeln": 0.39,
+  "Tomaten": 1.99,
+  "Gurke": 0.99,
+  "Schwammtücher": 0.99,
+  "Käse": 1.99,
+  "Creme Fine": 0.79,
+  "Äpfel": 1.49
+}
+
+def einkaufszettel(preise):
+  total = 0
+  for key in preise:
+    total += d_preise[key]
+  return total
+
+budget = 20.80
+
+def sparen(budget, preise):
+  einkaufszettel(d_preise)
+  if einkaufszettel(d_preise) > budget:
+    return False
+  else:
+    return True
+
+print einkaufszettel(d_preise)
+print sparen(budget, d_preise)
+
+if sparen(budget, d_preise) == True:
+  print "Dafuer reicht das Geld noch aus!"
